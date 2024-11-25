@@ -1,0 +1,69 @@
+.card {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+  display: none;
+
+  background-color: black;
+
+  border-radius: 10px;
+  /* background-image: (#32423B,#4d9a79a3,#476b38); */
+  /* background-image: repeating-linear-gradient(
+    to top,
+    #000000a9,
+    
+    #0000009b
+  ); */
+
+  /* background-color: #32423B; */
+}
+.card div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  border-radius: 5px;
+  background-color: rgb(251, 251, 251);
+  height: 28px;
+}
+select {
+  height: 30px;
+  border-radius: 5px;
+}
+button {
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  grid-column: 1;
+  grid-row: 7;
+  background-image: linear-gradient(
+    to right,
+    rgba(230, 65, 23, 0.795),
+    rgba(253, 17, 17, 0.564),
+    rgba(238, 161, 8, 0.833)
+  );
+}
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(./stadium_background.webp);
+}
+.container {
+  background-image: url(./téléchargement.svg);
+  background-color: rgba(24, 24, 24, 0.547);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.test img {
+  object-fit: contain;
+}
