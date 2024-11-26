@@ -1,85 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <dev class="container">
-        <img src="./téléchargement.svg" alt="">
+      <!-- <img src="./téléchargement.svg" alt=""> -->
+      <div class="card">
+        <div class="cardsRow1">
+          <div class="cardsInfo">
+            <div class="position"></div>
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button id="ajouter" onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button>ajouter</button>
+          </div>
+        </div>
+        <div class="cardsRow2">
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_gold.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_gold.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_gold.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+        </div>
+        <div class="cardsRow3">
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+        </div>
+        <div class="cardsRow4">
+          <div class="cardsInfo">
+            <div class="namePlayer"></div>
+            <div class="rate"></div>
+            <div class="nationalityPlayer"></div>
+            <img src="./image/badge_ballon_dor.webp" alt="" />
+            <button onclick="inputShow(event)">ajouter</button>
+          </div>
+        </div>
+      </div>
     </dev>
-    <div class="card">
-       <div>
+    <div class="cardInput hidden">
+      <i class="fa-solid fa-xmark"></i>
+      <div>
         <label for="">name</label>
-        <input type="text" name="" id="name" placeholder="enter the name ">
-       </div>
+        <input type="text" name="" id="name" placeholder="enter the name " />
+      </div>
 
-       <div>
+      <div>
         <label for="">position</label>
         <select name="" id="">
-            <option value="position">position</option>
-            <option value="st">st</option>
-            <option value="lw">lw</option>
-            <option value="rw">rw</option>
-            <option value="cdm">cdm</option>
-            <option value="cm">cm</option>
-            <option value="lb">lb</option>
-            <option value="rb">rb</option>
-            <option value="cb">cb</option>
-            <option value="gk">gk</option>
+          <option value="position">position</option>
+          <option value="st">st</option>
+          <option value="lw">lw</option>
+          <option value="rw">rw</option>
+          <option value="cdm">cdm</option>
+          <option value="cm">cm</option>
+          <option value="lb">lb</option>
+          <option value="rb">rb</option>
+          <option value="cb">cb</option>
+          <option value="gk">gk</option>
         </select>
+      </div>
 
-       </div>
-        
-        <div>
-            <label for="">nationality</label>
-            <input type="text" name="" id="nationality" placeholder="set the nationality">
-        </div>
-       
-        <div>
-            <label for="">club</label>
-            <input type="text" name="" id="club" placeholder="Club">
-        </div>
-        <div>
-            <label for="">rating</label>
-            <input type="number" name="" id="rating" placeholder="rating" min="0" max="99">
-        </div>
-        <div>
-            <label for="">pace</label>
-            <input type="number" name="" id="pace" placeholder="pace"  min="0" max="99">
-        </div>
-        <div>
-            <label for="">shooting</label>
-            <input type="number" name="" id="shooting" placeholder="shooting"  min="0" max="99">
-        </div>
-        <div>
-            <label for="">passing</label>
-            <input type="number" name="" id="passing" placeholder="passing" min="0" max="99">
-        </div>
-        <div>
-            <label for="">dribbling</label>
-            <input type="number" name="" id="dribbling" placeholder="dribbling" min="0" max="99">
-        </div>
-        <div>
-            <label for="">defending</label>
-            <input type="number" name="" id="defending" placeholder="defending" min="0" max="99">
-        </div>
-        <div>
-            <label for="">physical</label>
-            <input type="number" name="" id="physical" placeholder="physical" min="0" max="99">
-        </div>
-        
-        
-        
-       
-       
-        
-        
-        <button class="add">add</button>
+      <div>
+        <label for="">nationality</label>
+        <input
+          type="text"
+          name=""
+          id="nationality"
+          placeholder="set the nationality"
+        />
+      </div>
 
+      <div>
+        <label for="">club</label>
+        <input type="text" name="" id="club" placeholder="Club" />
+      </div>
+      <div>
+        <label for="">rating</label>
+        <input
+          type="number"
+          name=""
+          id="rating"
+          placeholder="rating"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">pace</label>
+        <input
+          type="number"
+          name=""
+          id="pace"
+          placeholder="pace"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">shooting</label>
+        <input
+          type="number"
+          name=""
+          id="shooting"
+          placeholder="shooting"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">passing</label>
+        <input
+          type="number"
+          name=""
+          id="passing"
+          placeholder="passing"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">dribbling</label>
+        <input
+          type="number"
+          name=""
+          id="dribbling"
+          placeholder="dribbling"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">defending</label>
+        <input
+          type="number"
+          name=""
+          id="defending"
+          placeholder="defending"
+          min="0"
+          max="99"
+        />
+      </div>
+      <div>
+        <label for="">physical</label>
+        <input
+          type="number"
+          name=""
+          id="physical"
+          placeholder="physical"
+          min="0"
+          max="99"
+        />
+      </div>
+
+      <button onclick="inputAdd(event)" class="add">add</button>
     </div>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

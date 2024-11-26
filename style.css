@@ -1,26 +1,52 @@
-.card {
-  padding: 5px;
+.cardInput {
+ 
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto auto auto auto auto auto auto;
   gap: 10px;
   width: 400px;
-  display: none;
 
   background-color: black;
 
   border-radius: 10px;
-  /* background-image: (#32423B,#4d9a79a3,#476b38); */
-  /* background-image: repeating-linear-gradient(
-    to top,
-    #000000a9,
-    
-    #0000009b
-  ); */
 
-  /* background-color: #32423B; */
 }
-.card div {
+.fa-solid{
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 200px;
+  color: rgb(255, 0, 0);
+}
+.hidden{
+  display: none;
+
+}
+.cardsInfo div{
+  color: aliceblue;
+
+
+}
+.namePlayer{
+  width: 40px;
+  position: absolute;
+  top: 70px;
+  left: 12px;
+  text-wrap:wrap;
+}
+.rate{
+  position: absolute;
+  top: 20px;
+}
+.nationalityPlayer{
+  position: absolute;
+  top: 40px;
+}
+.cardInput div {
   color: white;
   display: flex;
   flex-direction: column;
@@ -35,7 +61,7 @@ select {
   border-radius: 5px;
 }
 button {
-  width: 90px;
+  width: 80px;
   height: 30px;
   border-radius: 5px;
   grid-column: 1;
@@ -48,22 +74,56 @@ button {
   );
 }
 body {
+  /* background-color: rgba(5, 5, 5, 0.958); */
   margin: 0;
 
-  width: 100vw;
+  
   height: 100vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(./stadium_background.webp);
+  background-image: url(./image/stadium_background.webp);
 }
 .container {
-  background-image: url(./téléchargement.svg);
-  background-color: rgba(24, 24, 24, 0.547);
-  height: 100%;
+  /* background-image: url(./téléchargement.svg); */
+  /* background-color: rgba(24, 24, 24, 0.547); */
+  width: 100vw;
+
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
-.test img {
-  object-fit: contain;
+
+.cardsRow1 img,
+.cardsRow2 img,
+.cardsRow3 img,
+.cardsRow4 img {
+  width: 115px;
+  margin: -11px;
+}
+.cardsRow1{
+  display: flex;
+  justify-content: space-around;
+}
+.cardsRow2{
+  display: flex;
+  justify-content: space-around;
+}
+.cardsRow3{
+  display: flex;
+  justify-content: space-around;
+}
+.cardsRow4{
+  display: flex;
+  justify-content: center;
+}
+
+
+.cardsInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardsInfo button {
+  margin: 0 auto;
 }
