@@ -85,6 +85,30 @@ function inputAdd(event) {
       formule.querySelector(".physicalI").value;
     btn.textContent = "modifier";
   }
+  else{
+    formulaire.querySelector("#name").textContent =
+    formule.querySelector(".name").value;
+  formulaire.querySelector("#logo").src =
+    formule.querySelector(".equipe").value;
+  formulaire.querySelector("#photo").src =
+    formule.querySelector(".photo").value;
+  formulaire.querySelector("#flag").src =
+    formule.querySelector(".nationalityI").value;
+  formulaire.querySelector("#rate").textContent =
+    formule.querySelector(".rating").value;
+  formulaire.querySelector("#pace").textContent =
+    formule.querySelector(".paceI").value;
+  formulaire.querySelector("#shooting").textContent =
+    formule.querySelector(".shootingI").value;
+  formulaire.querySelector("#passing").textContent =
+    formule.querySelector(".passingI").value;
+  formulaire.querySelector("#dribbling").textContent =
+    formule.querySelector(".dribblingI").value;
+  formulaire.querySelector("#defending").textContent =
+    formule.querySelector(".defendingI").value;
+  formulaire.querySelector("#physical").textContent =
+    formule.querySelector(".physicalI").value;
+  }
   // for (i = 1; i < 11; i++) {
   //   event.target.parentElement.children[i].children[1].value = "";
   // }
