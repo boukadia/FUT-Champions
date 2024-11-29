@@ -13,6 +13,21 @@
 
   border-radius: 10px;
 }
+.cardInputGk {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+
+  background-color: black;
+
+  border-radius: 10px;
+}
 .fa-solid {
   position: absolute;
   top: 2px;
@@ -23,7 +38,7 @@
 .hidden {
   display: none;
 }
-.cardsInfo div {
+.cardsInfo div,.cardsInfoGk div {
   color: aliceblue;
 }
 #position {
@@ -144,6 +159,11 @@ p {
   top: 65%;
   left: 75%;
 }
+.cardInputGk div{
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
 .cardInput div {
   color: white;
   display: flex;
@@ -220,6 +240,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.cardsInfo button {
+.cardsInfoGk{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.cardsInfo button, .cardsInfoGk button {
   margin: 0 auto;
 }

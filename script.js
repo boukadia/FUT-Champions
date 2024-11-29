@@ -7,7 +7,7 @@ let btn = "";
 let icon = document.querySelector(".fa-solid");
 // let name = document.querySelector("#name");
 // let parName = document.querySelector(".parName");
-let arrayIN;
+let stockData;
 let deleteButton = document.createElement("button");
 deleteButton.textContent = "delete";
 deleteButton = document.createElement("button");
@@ -15,18 +15,28 @@ deleteButton.textContent = "Supprimer";
 deleteButton.classList.add("deleteButton");
 
 let cardInput = document.querySelector(".cardInput");
+let cardInputGk=document.querySelector(".cardInputGk")
 let formulaire;
+let formulaire1;
 let formule;
 
 icon.addEventListener("click", function () {
   cardInput.classList.add("hidden");
+  
+});
+icon.addEventListener("click", function () {
+  
+  cardInputGk.classList.add("hidden");
 });
 function formuleShow(event) {
   formulaire = event.target.parentElement;
+  // formulaire1=event.target.parentElement;
   const formInputs = cardInput.querySelectorAll("input");
   formInputs.forEach((input) => (input.value = ""));
-
+  
   btn = event.target;
+  if(formulaire.classList!="cardsInfoGk"){
+
   if (btn.textContent == "modifier") {
     formule.querySelector(".name").value =
       formulaire.querySelector("#name").textContent;
@@ -36,7 +46,7 @@ function formuleShow(event) {
     formule.querySelector(".photo").value =
       formulaire.querySelector("#photo").src;
     formule.querySelector(".nationalityI").value =
-      formulaire.querySelector("#flag").src =
+      formulaire.querySelector("#flag").src;
       formule.querySelector(".rating").value =
         formulaire.querySelector("#rate").textContent;
     formule.querySelector(".paceI").value =
@@ -60,10 +70,56 @@ function formuleShow(event) {
   }
   // if(ajouter.textContent=="ajouter")
   cardInput.classList.remove("hidden");
-  positionI.options[0].textContent =
-    formulaire.querySelector("#position").textContent;
+  cardInputGk.classList.add("hidden");
+  positionI.options[0].textContent = formulaire.querySelector("#position").textContent;
   positionName = positionI.options[0].textContent;
-  temp = btn.textContent;
+  temp = btn.textContent;}
+  else{
+    console.log(formulaire)
+    if (btn.textContent == "modifier") {
+      formule.querySelector(".name").value =
+      formulaire.querySelector("#name").textContent;
+    formule.querySelector(".equipe").value =
+      formulaire.querySelector("#logo").src;
+
+    formule.querySelector(".photo").value =
+      formulaire.querySelector("#photo").src;
+    formule.querySelector(".nationalityI").value =
+      formulaire.querySelector("#flag").src;
+      formule.querySelector(".rating").value =
+        formulaire.querySelector("#rate").textContent;
+    formule.querySelector(".paceI").value =
+      formulaire.querySelector("#pace").textContent;
+    formule.querySelector(".shootingI").value =
+      formulaire.querySelector("#shooting").textContent;
+
+    formule.querySelector(".passingI").value =
+      formulaire.querySelector("#passing").textContent;
+
+    formule.querySelector(".dribblingI").value =
+      formulaire.querySelector("#dribbling").textContent;
+
+    formule.querySelector(".defendingI").value =
+      formulaire.querySelector("#defending").textContent;
+    formule.querySelector(".physicalI").value =
+      formulaire.querySelector("#physical").textContent;
+    deleteButton.classList.remove("hidden");
+  
+      // formule.querySelector(".ajouter").textContent = "ajouter";
+    }
+    // if(ajouter.textContent=="ajouter")
+   
+  positionI.options[0].textContent = formulaire.querySelector("#position").textContent;
+  positionName = positionI.options[0].textContent;
+  cardInput.classList.add("hidden");
+  cardInputGk.classList.remove("hidden");
+   
+    console.log(formulaire.querySelector("#position"))
+    
+    
+}
+
+  
 
   return formulaire;
 }
@@ -71,12 +127,15 @@ function formuleShow(event) {
 function inputAdd(event) {
   formule = event.target.parentElement;
   cardInput.classList.add("hidden");
+  cardInputGk.classList.add("hidden");
   formule.appendChild(deleteButton);
   deleteButton.addEventListener("click", function () {
     formulaire.querySelector("#badge").src = "./";
     cardInput.classList.add("hidden");
+    cardInputGk.classList.add("hidden");
+
   });
-  arrayIN = [
+  stockData = [
     formule.querySelector(".name").value,
     formule.querySelector(".physicalI").value,
     formule.querySelector(".defendingI").value,
@@ -96,16 +155,15 @@ function inputAdd(event) {
   }
 
   for (let i = 8; i < 11; i++) {
-    if (!URL.canParse(arrayIN[i])) {
+    if (!URL.canParse(stockData[i])) {
       alert("URL est invalide");
-      // formule.reset();
       return;
     } else {
       break;
     }
   }
   for (let i = 1; i < 7; i++) {
-    if (Number(arrayIN[i]) >= 100 || Number(arrayIN[i]) < 1) {
+    if (Number(stockData[i]) >= 100 || Number(stockData[i]) < 1) {
       alert("choisir une nombre entre 1 et 99 ");
       return;
     } else {
