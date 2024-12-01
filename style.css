@@ -39,23 +39,24 @@
 .hidden {
   display: none;
 }
-.cardsInfo div,.cardsInfoGk div {
+.cardsInfo div,
+.cardsInfoGk div {
   color: aliceblue;
 }
-#position {
+.position {
   position: absolute;
   top: 14%;
   left: 5%;
   color: rgb(255, 255, 255) !important;
 }
-#name {
+.namePlayer {
   position: absolute;
   top: 54%;
   left: 10%;
   width: 100%;
   font-size: 1.2em;
 }
-#rate {
+.rate {
   position: absolute;
   top: 20%;
   left: 5%;
@@ -64,29 +65,29 @@
   position: absolute;
   top: 40px;
 } */
-#photo {
-  width: 86%;
+.photoPlayer {
+  width: 86% !important;
   position: absolute;
   top: 13%;
   left: 18%;
 }
 
-#flag {
+.flagg {
   position: absolute;
   left: 86%;
   top: 20%;
-  width: 20px;
+  width: 20px !important;
   height: 20px;
   border-radius: 50%;
 }
 #club {
   position: absolute;
 }
-#logo {
+.logo {
   position: absolute;
   top: 33%;
   left: 80px;
-  width: 23%;
+  width: 23% !important;
   height: 13%;
   border-radius: 50%;
 }
@@ -103,7 +104,7 @@ p {
   top: 58%;
   left: 3%;
 }
-#pace {
+.paceValeur {
   position: absolute;
   top: 65%;
   left: 3%;
@@ -114,7 +115,7 @@ p {
   top: 58%;
   left: 30%;
 }
-#shooting {
+.shootingValeur {
   position: absolute;
   top: 65%;
   left: 30%;
@@ -124,7 +125,7 @@ p {
   top: 58%;
   left: 17%;
 }
-#passing {
+.passingValeur {
   position: absolute;
   top: 65%;
   left: 17%;
@@ -135,7 +136,7 @@ p {
   left: 45%;
 }
 
-#dribbling {
+.dribblingValeur {
   position: absolute;
   top: 65%;
   left: 45%;
@@ -145,7 +146,7 @@ p {
   top: 58%;
   left: 60%;
 }
-#defending {
+.defendingValeur {
   position: absolute;
   top: 65%;
   left: 60%;
@@ -155,12 +156,12 @@ p {
   top: 58%;
   left: 75%;
 }
-#physical {
+.physicalValeur {
   position: absolute;
   top: 65%;
   left: 75%;
 }
-.cardInputGk div{
+.cardInputGk div {
   color: white;
   display: flex;
   flex-direction: column;
@@ -241,13 +242,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.cardsInfoGk{
+.cardsInfoGk {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
-.cardsInfo button, .cardsInfoGk button {
+.cardsInfo button,
+.cardsInfoGk button {
   margin: 0 auto;
 }

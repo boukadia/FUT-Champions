@@ -33,32 +33,32 @@ function formuleShow(event) {
   if (formulaire.classList != "cardsInfoGk") {
     if (btn.textContent === "modifier") {
       deleteButton.classList.remove("hidden");
-      formule.querySelector(".name").value =
-        formulaire.querySelector("#name").textContent;
+      formule.querySelector(".nameInpt").value =
+        formulaire.querySelector(".namePlayer").textContent;
       formule.querySelector(".equipe").value =
-        formulaire.querySelector("#logo").src;
+        formulaire.querySelector(".logo").src;
 
       formule.querySelector(".photo").value =
-        formulaire.querySelector("#photo").src;
+        formulaire.querySelector(".photoPlayer").src;
       formule.querySelector(".nationalityI").value =
-        formulaire.querySelector("#flag").src;
+        formulaire.querySelector(".flagg").src;
       formule.querySelector(".rating").value =
-        formulaire.querySelector("#rate").textContent;
+        formulaire.querySelector(".rate").textContent;
       formule.querySelector(".paceI").value =
-        formulaire.querySelector("#pace").textContent;
+        formulaire.querySelector(".paceValeur").textContent;
       formule.querySelector(".shootingI").value =
-        formulaire.querySelector("#shooting").textContent;
+        formulaire.querySelector(".shootingValeur").textContent;
 
       formule.querySelector(".passingI").value =
-        formulaire.querySelector("#passing").textContent;
+        formulaire.querySelector(".passingValeur").textContent;
 
       formule.querySelector(".dribblingI").value =
-        formulaire.querySelector("#dribbling").textContent;
+        formulaire.querySelector(".dribblingValeur").textContent;
 
       formule.querySelector(".defendingI").value =
-        formulaire.querySelector("#defending").textContent;
+        formulaire.querySelector(".defendingValeur").textContent;
       formule.querySelector(".physicalI").value =
-        formulaire.querySelector("#physical").textContent;
+        formulaire.querySelector(".physicalValeur").textContent;
 
       // console.log("if1");
       cardInput.classList.remove("hidden");
@@ -77,40 +77,40 @@ function formuleShow(event) {
   } else {
     if (btn.textContent === "modifier") {
       deleteButtonGk.classList.remove("hidden");
-      formule.querySelector(".name").value =
-        formulaire.querySelector("#name").textContent;
+      formule.querySelector(".nameInpt").value =
+        formulaire.querySelector(".namePlayer").textContent;
       formule.querySelector(".equipe").value =
-        formulaire.querySelector("#logo").src;
+        formulaire.querySelector(".logo").src;
 
       formule.querySelector(".photo").value =
-        formulaire.querySelector("#photo").src;
+        formulaire.querySelector(".photoPlayer").src;
       formule.querySelector(".nationalityI").value =
-        formulaire.querySelector("#flag").src;
+        formulaire.querySelector(".flagg").src;
       formule.querySelector(".rating").value =
-        formulaire.querySelector("#rate").textContent;
+        formulaire.querySelector(".rate").textContent;
       formule.querySelector(".paceI").value =
-        formulaire.querySelector("#pace").textContent;
+        formulaire.querySelector(".paceValeur").textContent;
       formule.querySelector(".shootingI").value =
-        formulaire.querySelector("#shooting").textContent;
+        formulaire.querySelector(".shootingValeur").textContent;
 
       formule.querySelector(".passingI").value =
-        formulaire.querySelector("#passing").textContent;
+        formulaire.querySelector(".passingValeur").textContent;
 
       formule.querySelector(".dribblingI").value =
-        formulaire.querySelector("#dribbling").textContent;
+        formulaire.querySelector(".dribblingValeur").textContent;
 
       formule.querySelector(".defendingI").value =
-        formulaire.querySelector("#defending").textContent;
+        formulaire.querySelector(".defendingValeur").textContent;
       formule.querySelector(".physicalI").value =
-        formulaire.querySelector("#physical").textContent;
+        formulaire.querySelector(".physicalValeur").textContent;
 
       cardInput.classList.add("hidden");
       cardInputGk.classList.remove("hidden");
       // positionInpt.options[0].textContent =
-      // formulaire.querySelector("#position").textContent;
+      // formulaire.querySelector(".position").textContent;
     } else {
       formInputsGk.forEach((input) => (input.value = ""));
-      console.log(formulaire.querySelector("#position").textContent);
+      console.log(formulaire.querySelector(".position").textContent);
       console.log(positionInpt.options[0].textContent);
       deleteButtonGk.classList.add("hidden");
       cardInput.classList.add("hidden");
@@ -119,26 +119,25 @@ function formuleShow(event) {
   }
 
   positionInpt.options[0].textContent =
-    formulaire.querySelector("#position").textContent;
+    formulaire.querySelector(".position").textContent;
   positionInptGk.options[0].textContent =
-    formulaire.querySelector("#position").textContent;
+    formulaire.querySelector(".position").textContent;
   // positionInptGk.options[0].textContent =
-  // formulaire.querySelector("#position").textContent;
+  // formulaire.querySelector(".position").textContent;
   // positionName = positionInpt.options[0].textContent;
 
   return formulaire;
 }
 
 function inputAdd(event) {
-  formulaire.querySelector(".cardsInfoDetails").classList.remove("hidden");
-
   deleteButton.classList.add("hidden");
   formule = event.target.parentElement;
   cardInput.classList.add("hidden");
+  formulaire.querySelector(".cardsInfoDetails").classList.remove("hidden");
   cardInputGk.classList.add("hidden");
 
   stockData = [
-    formule.querySelector(".name").value,
+    formule.querySelector(".nameInpt").value,
     formule.querySelector(".physicalI").value,
     formule.querySelector(".defendingI").value,
     formule.querySelector(".dribblingI").value,
@@ -150,7 +149,7 @@ function inputAdd(event) {
     formule.querySelector(".equipe").value,
     formule.querySelector(".photo").value,
   ];
-  if (formule.querySelector(".name").value.trim() == "") {
+  if (formule.querySelector(".nameInpt").value.trim() == "") {
     formInputs.forEach((input) => (input.value = ""));
     formInputsGk.forEach((input) => (input.value = ""));
     event.preventDefault();
@@ -183,43 +182,43 @@ function inputAdd(event) {
     }
   }
 
-  formulaire.querySelector("#name").textContent =
-    formule.querySelector(".name").value;
-  formulaire.querySelector("#logo").src =
+  formulaire.querySelector(".namePlayer").textContent =
+    formule.querySelector(".nameInpt").value;
+  formulaire.querySelector(".logo").src =
     formule.querySelector(".equipe").value;
-  formulaire.querySelector("#photo").src =
+  formulaire.querySelector(".photoPlayer").src =
     formule.querySelector(".photo").value;
-  formulaire.querySelector("#flag").src =
+  formulaire.querySelector(".flagg").src =
     formule.querySelector(".nationalityI").value;
-  formulaire.querySelector("#rate").textContent =
+  formulaire.querySelector(".rate").textContent =
     formule.querySelector(".rating").value;
-  formulaire.querySelector("#pace").textContent =
+  formulaire.querySelector(".paceValeur").textContent =
     formule.querySelector(".paceI").value;
-  formulaire.querySelector("#shooting").textContent =
+  formulaire.querySelector(".shootingValeur").textContent =
     formule.querySelector(".shootingI").value;
-  formulaire.querySelector("#passing").textContent =
+  formulaire.querySelector(".passingValeur").textContent =
     formule.querySelector(".passingI").value;
-  formulaire.querySelector("#dribbling").textContent =
+  formulaire.querySelector(".dribblingValeur").textContent =
     formule.querySelector(".dribblingI").value;
-  formulaire.querySelector("#defending").textContent =
+  formulaire.querySelector(".defendingValeur").textContent =
     formule.querySelector(".defendingI").value;
-  formulaire.querySelector("#physical").textContent =
+  formulaire.querySelector(".physicalValeur").textContent =
     formule.querySelector(".physicalI").value;
   btn.textContent = "modifier";
 }
 function del(event) {
-  formulaire.querySelector("#photo").textContent = "";
-  formulaire.querySelector("#name").textContent = "";
-  formulaire.querySelector("#rate").src = "";
-  formulaire.querySelector("#logo").classList.remove("src");
-  formulaire.querySelector("#flag").src = "";
-  formulaire.querySelector("#rate").textContent = "";
-  formulaire.querySelector("#pace").textContent = "";
-  formulaire.querySelector("#dribbling").textContent = "";
-  formulaire.querySelector("#passing").textContent = "";
-  formulaire.querySelector("#defending").textContent = "";
-  formulaire.querySelector("#physical").textContent = "";
-  formulaire.querySelector("#shooting").textContent = "";
+  formulaire.querySelector(".photoPlayer").textContent = "";
+  formulaire.querySelector(".namePlayer").textContent = "";
+  formulaire.querySelector(".rate").src = "";
+  formulaire.querySelector(".logo").classList.remove("src");
+  formulaire.querySelector(".flagg").src = "";
+  formulaire.querySelector(".rate").textContent = "";
+  formulaire.querySelector(".paceValeur").textContent = "";
+  formulaire.querySelector(".dribblingValeur").textContent = "";
+  formulaire.querySelector(".passingValeur").textContent = "";
+  formulaire.querySelector(".defendingValeur").textContent = "";
+  formulaire.querySelector(".physicalValeur").textContent = "";
+  formulaire.querySelector(".shootingValeur").textContent = "";
   formulaire.querySelector(".cardsInfoDetails").classList.add("hidden");
   deleteButton.classList.add("hidden");
   formInputs.forEach((input) => (input.value = ""));
