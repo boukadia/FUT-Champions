@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 let positionInpt = document.getElementById("positionInpt");
 
 let positionName;
@@ -8,14 +8,10 @@ let icon = document.querySelector(".fa-solid");
 let stockData;
 let deleteButton = document.querySelector(".delete");
 let deleteButtonGk = document.querySelector(".deleteGk");
-// deleteButton.textContent = "Supprimer";
-// deleteButton.classList.add("deleteButton");
 
 let cardInput = document.querySelector(".cardInput");
 let cardInputGk = document.querySelector(".cardInputGk");
-// console.log(cardInputGk);
 let formulaire;
-let formulaire1;
 var formule;
 const formInputs = cardInput.querySelectorAll("input");
 const formInputsGk = cardInputGk.querySelectorAll("input");
@@ -60,15 +56,9 @@ function formuleShow(event) {
       formule.querySelector(".physicalI").value =
         formulaire.querySelector(".physicalValeur").textContent;
 
-      // console.log("if1");
       cardInput.classList.remove("hidden");
       cardInputGk.classList.add("hidden");
-    }
-    // else {
-    //   deleteButton.classList.add("hidden");
-    //   console.log("els1");
-    // }
-    else {
+    } else {
       formInputs.forEach((input) => (input.value = ""));
       deleteButton.classList.add("hidden");
       cardInput.classList.remove("hidden");
@@ -106,8 +96,6 @@ function formuleShow(event) {
 
       cardInput.classList.add("hidden");
       cardInputGk.classList.remove("hidden");
-      // positionInpt.options[0].textContent =
-      // formulaire.querySelector(".position").textContent;
     } else {
       formInputsGk.forEach((input) => (input.value = ""));
       console.log(formulaire.querySelector(".position").textContent);
@@ -122,9 +110,6 @@ function formuleShow(event) {
     formulaire.querySelector(".position").textContent;
   positionInptGk.options[0].textContent =
     formulaire.querySelector(".position").textContent;
-  // positionInptGk.options[0].textContent =
-  // formulaire.querySelector(".position").textContent;
-  // positionName = positionInpt.options[0].textContent;
 
   return formulaire;
 }
@@ -155,7 +140,6 @@ function inputAdd(event) {
     event.preventDefault();
     alert("remplire les champ");
 
-    // deleteButton.classList.add("hidden");
     return;
   }
 
@@ -164,7 +148,6 @@ function inputAdd(event) {
       formInputs.forEach((input) => (input.value = ""));
       formInputsGk.forEach((input) => (input.value = ""));
 
-      // deleteButton.classList.add("hidden");
       alert("URL est invalide");
 
       return;
@@ -174,7 +157,6 @@ function inputAdd(event) {
     if (Number(stockData[i]) >= 100 || Number(stockData[i]) < 1) {
       formInputs.forEach((input) => (input.value = ""));
       formInputsGk.forEach((input) => (input.value = ""));
-      // deleteButton.classList.add("hidden");
       alert("choisir une nombre entre 1 et 99 ");
 
       // continue;
