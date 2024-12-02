@@ -1,17 +1,26 @@
-"use strict";
+let addGk = document.querySelector(".addGk");
+let add = document.querySelector(".add");
+let addRemplacementGk = document.querySelector(".addRemplacementGk");
+let addRemplacement = document.querySelector(".addRemplacement");
+let addPlayersR = document.querySelector(".addPlayersR");
+let addGkRempl = document.querySelector(".addGkRempl");
+let cardInputR = document.querySelector(".cardInputR");
+let cardInputGkR = document.querySelector(".cardInputGkR");
 let positionInpt = document.getElementById("positionInpt");
-
+let remplacant = document.querySelector(".remplacant");
 let positionName;
+let positionInptGk = document.getElementById("positionInptGk");
 let ajouter = document.querySelector(".ajouter");
 let btn = "";
+
 let icon = document.querySelector(".fa-solid");
 let stockData;
 let deleteButton = document.querySelector(".delete");
 let deleteButtonGk = document.querySelector(".deleteGk");
-
+let selectOption;
 let cardInput = document.querySelector(".cardInput");
 let cardInputGk = document.querySelector(".cardInputGk");
-let formulaire;
+let card;
 var formule;
 const formInputs = cardInput.querySelectorAll("input");
 const formInputsGk = cardInputGk.querySelectorAll("input");
@@ -62,10 +71,10 @@ function formuleShow(event) {
       formInputs.forEach((input) => (input.value = ""));
       deleteButton.classList.add("hidden");
       cardInput.classList.remove("hidden");
-      cardInputGk.classList.add("hidden");
+      cardInputGk.style.display = "none";
     }
   } else {
-    if (btn.textContent === "modifier") {
+    if (btn.textContent == "modifier") {
       deleteButtonGk.classList.remove("hidden");
       formule.querySelector(".nameInpt").value =
         formulaire.querySelector(".namePlayer").textContent;
@@ -94,15 +103,15 @@ function formuleShow(event) {
       formule.querySelector(".physicalI").value =
         formulaire.querySelector(".physicalValeur").textContent;
 
-      cardInput.classList.add("hidden");
-      cardInputGk.classList.remove("hidden");
+      cardInput.style.display = "none";
+      cardInputGk.style.display = "grid";
     } else {
       formInputsGk.forEach((input) => (input.value = ""));
       console.log(formulaire.querySelector(".position").textContent);
       console.log(positionInpt.options[0].textContent);
       deleteButtonGk.classList.add("hidden");
       cardInput.classList.add("hidden");
-      cardInputGk.classList.remove("hidden");
+      cardInputGk.style.display = "grid";
     }
   }
 
@@ -119,7 +128,7 @@ function inputAdd(event) {
   formule = event.target.parentElement;
   cardInput.classList.add("hidden");
   formulaire.querySelector(".cardsInfoDetails").classList.remove("hidden");
-  cardInputGk.classList.add("hidden");
+  cardInputGk.style.display = "none";
 
   stockData = [
     formule.querySelector(".nameInpt").value,
@@ -208,5 +217,263 @@ function del(event) {
   btn.textContent = "ajouter";
 
   cardInput.classList.add("hidden");
+  cardInputGk.style.display = "none";
+}
+// .................................................................
+function showFormuleRem() {
+  addPlayersR.classList.remove("hidden");
+  addGkRempl.classList.remove("hidden");
+}
+
+function showRemplacement(event) {
+  formInputs.forEach((input) => (input.value = ""));
+  formInputsGk.forEach((input) => (input.value = ""));
+  // positionInpt.removeAttribute("disabled");
+  let btn = event.target;
+  let cardsInfo = document.createElement("div");
+  let position = document.createElement("div");
+
+  cardsInfo.appendChild(position);
+  let cardsInfoDetails = document.createElement("div");
+  let namePlayer = document.createElement("div");
+  let photoPlayer = document.createElement("image");
+  let flagg = document.createElement("image");
+  let logo = document.createElement("image");
+  let rate = document.createElement("div");
+  let pace = document.createElement("div");
+  let paceValeur = document.createElement("div");
+  let shooting = document.createElement("div");
+  let shootingValeur = document.createElement("div");
+  let passing = document.createElement("div");
+  let passingValeur = document.createElement("div");
+  let dribbling = document.createElement("div");
+  let dribblingValeur = document.createElement("div");
+  let defending = document.createElement("div");
+  let defendingValeur = document.createElement("div");
+  let physical = document.createElement("div");
+  let physicalValeur = document.createElement("div");
+  cardsInfoDetails.appendChild(namePlayer);
+  cardsInfoDetails.appendChild(photoPlayer);
+  cardsInfoDetails.appendChild(flagg);
+  cardsInfoDetails.appendChild(logo);
+  cardsInfoDetails.appendChild(rate);
+  cardsInfoDetails.appendChild(pace);
+  cardsInfoDetails.appendChild(paceValeur);
+  cardsInfoDetails.appendChild(shooting);
+  cardsInfoDetails.appendChild(shootingValeur);
+  cardsInfoDetails.appendChild(passing);
+  cardsInfoDetails.appendChild(passingValeur);
+  cardsInfoDetails.appendChild(dribbling);
+  cardsInfoDetails.appendChild(dribblingValeur);
+  cardsInfoDetails.appendChild(defending);
+  cardsInfoDetails.appendChild(defendingValeur);
+  cardsInfoDetails.appendChild(physical);
+  cardsInfoDetails.appendChild(physicalValeur);
+  cardsInfo.appendChild(cardsInfoDetails);
+  let badge = document.createElement("image");
+  cardsInfo.appendChild(badge);
+
+  remplacant.appendChild(cardsInfo);
+  if (btn.classList == "addGkRempl") {
+    cardInputR.style.display = "none";
+    cardInputGkR.style.display = "grid";
+  } else {
+    cardInputR.classList.remove("hidden");
+    cardInputR.style.display = "grid";
+    cardInputGkR.style.display = "none";
+  }
+
+  return;
+}
+
+function addPlayerRemplace(event) {
+  formInputs.forEach((input) => (input.value = ""));
+  formInputsGk.forEach((input) => (input.value = ""));
+  cardInputR.style.display = "none";
+
+  addRemplacement.classList.remove("hidden");
+
+  let cardsInfo = document.createElement("div");
+  let position = document.createElement("div");
+  position.classList.add("position");
+  cardsInfo.appendChild(position);
+  cardsInfo.classList.add("cardsInfo");
+  let cardsInfoDetails = document.createElement("div");
+  let namePlayer = document.createElement("div");
+  namePlayer.classList.add("namePlayer");
+  let photoPlayer = document.createElement("img");
+  photoPlayer.classList.add("photoPlayer");
+  let flagg = document.createElement("img");
+  flagg.classList.add("flagg");
+  let logo = document.createElement("img");
+  logo.classList.add("logo");
+  let rate = document.createElement("div");
+  rate.classList.add("rate");
+  let pace = document.createElement("p");
+  pace.classList.add("pace");
+  pace.textContent = "PAC";
+  let paceValeur = document.createElement("div");
+  paceValeur.classList.add("paceValeur");
+  let shooting = document.createElement("p");
+  shooting.textContent = "SHO";
+  shooting.classList.add("shooting");
+  let shootingValeur = document.createElement("div");
+  shootingValeur.classList.add("shootingValeur");
+  let passing = document.createElement("p");
+  passing.textContent = "PAS";
+  passing.classList.add("passing");
+  let passingValeur = document.createElement("div");
+  passingValeur.classList.add("passingValeur");
+  let dribbling = document.createElement("p");
+  dribbling.textContent = "DRI";
+  dribbling.classList.add("dribbling");
+  let dribblingValeur = document.createElement("div");
+  dribblingValeur.classList.add("dribblingValeur");
+  let defending = document.createElement("p");
+  defending.textContent = "DEF";
+  defending.classList.add("defending");
+  let defendingValeur = document.createElement("div");
+  defendingValeur.classList.add("defendingValeur");
+  let physical = document.createElement("p");
+  physical.textContent = "PHY";
+  physical.classList.add("physical");
+  let physicalValeur = document.createElement("div");
+  physicalValeur.classList.add("physicalValeur");
+  cardsInfoDetails.appendChild(namePlayer);
+  cardsInfoDetails.appendChild(photoPlayer);
+  cardsInfoDetails.appendChild(flagg);
+  cardsInfoDetails.appendChild(logo);
+  cardsInfoDetails.appendChild(rate);
+  cardsInfoDetails.appendChild(pace);
+  cardsInfoDetails.appendChild(paceValeur);
+  cardsInfoDetails.appendChild(shooting);
+  cardsInfoDetails.appendChild(shootingValeur);
+  cardsInfoDetails.appendChild(passing);
+  cardsInfoDetails.appendChild(passingValeur);
+  cardsInfoDetails.appendChild(dribbling);
+  cardsInfoDetails.appendChild(dribblingValeur);
+  cardsInfoDetails.appendChild(defending);
+  cardsInfoDetails.appendChild(defendingValeur);
+  cardsInfoDetails.appendChild(physical);
+  cardsInfoDetails.appendChild(physicalValeur);
+  cardsInfo.appendChild(cardsInfoDetails);
+  let badge = document.createElement("img");
+  badge.src = "./image/badge_ballon_dor.webp";
+  badge.classList.add("badge");
+  cardsInfo.appendChild(badge);
+  let ajouterR = document.createElement("button");
+  ajouterR.classList.add("visibilite");
+  cardsInfo.appendChild(ajouterR);
+  remplacant.appendChild(cardsInfo);
+  let formule = event.target.parentElement;
+  namePlayer.textContent = formule.querySelector(".nameInpt").value;
+  logo.src = formule.querySelector(".equipe").value;
+  photoPlayer.src = formule.querySelector(".photo").value;
+  flagg.src = formule.querySelector(".nationalityI").value;
+  rate.textContent = formule.querySelector(".rating").value;
+  paceValeur.textContent = formule.querySelector(".paceI").value;
+  shootingValeur.textContent = formule.querySelector(".shootingI").value;
+  passingValeur.textContent = formule.querySelector(".passingI").value;
+  dribblingValeur.textContent = formule.querySelector(".dribblingI").value;
+  defendingValeur.textContent = formule.querySelector(".defendingI").value;
+  physicalValeur.textContent = formule.querySelector(".physicalI").value;
+  position.textContent = selectOption;
+}
+
+function addGkRemplace(event) {
+  formInputs.forEach((input) => (input.value = ""));
+  formInputsGk.forEach((input) => (input.value = ""));
+  cardInputGkR.style.display = "none";
+  addRemplacementGk.classList.remove("hidden");
+  let cardsInfo = document.createElement("div");
+  let position = document.createElement("div");
+  position.classList.add("position");
+  cardsInfo.appendChild(position);
+  cardsInfo.classList.add("cardsInfo");
+  let cardsInfoDetails = document.createElement("div");
+  let namePlayer = document.createElement("div");
+  namePlayer.classList.add("namePlayer");
+  let photoPlayer = document.createElement("img");
+  photoPlayer.classList.add("photoPlayer");
+  let flagg = document.createElement("img");
+  flagg.classList.add("flagg");
+  let logo = document.createElement("img");
+  logo.classList.add("logo");
+  let rate = document.createElement("div");
+  rate.classList.add("rate");
+  let pace = document.createElement("p");
+  pace.classList.add("pace");
+  pace.textContent = "DIV";
+  let paceValeur = document.createElement("div");
+  paceValeur.classList.add("paceValeur");
+  let shooting = document.createElement("p");
+  shooting.textContent = "HAN";
+  shooting.classList.add("shooting");
+  let shootingValeur = document.createElement("div");
+  shootingValeur.classList.add("shootingValeur");
+  let passing = document.createElement("p");
+  passing.textContent = "KIC";
+  passing.classList.add("passing");
+  let passingValeur = document.createElement("div");
+  passingValeur.classList.add("passingValeur");
+  let dribbling = document.createElement("p");
+  dribbling.textContent = "REF";
+  dribbling.classList.add("dribbling");
+  let dribblingValeur = document.createElement("div");
+  dribblingValeur.classList.add("dribblingValeur");
+  let defending = document.createElement("p");
+  defending.textContent = "SPE";
+  defending.classList.add("defending");
+  let defendingValeur = document.createElement("div");
+  defendingValeur.classList.add("defendingValeur");
+  let physical = document.createElement("p");
+  physical.textContent = "POS";
+  physical.classList.add("physical");
+  let physicalValeur = document.createElement("div");
+  physicalValeur.classList.add("physicalValeur");
+  cardsInfoDetails.appendChild(namePlayer);
+  cardsInfoDetails.appendChild(photoPlayer);
+  cardsInfoDetails.appendChild(flagg);
+  cardsInfoDetails.appendChild(logo);
+  cardsInfoDetails.appendChild(rate);
+  cardsInfoDetails.appendChild(pace);
+  cardsInfoDetails.appendChild(paceValeur);
+  cardsInfoDetails.appendChild(shooting);
+  cardsInfoDetails.appendChild(shootingValeur);
+  cardsInfoDetails.appendChild(passing);
+  cardsInfoDetails.appendChild(passingValeur);
+  cardsInfoDetails.appendChild(dribbling);
+  cardsInfoDetails.appendChild(dribblingValeur);
+  cardsInfoDetails.appendChild(defending);
+  cardsInfoDetails.appendChild(defendingValeur);
+  cardsInfoDetails.appendChild(physical);
+  cardsInfoDetails.appendChild(physicalValeur);
+  cardsInfo.appendChild(cardsInfoDetails);
+  let badge = document.createElement("img");
+  badge.src = "./image/badge_ballon_dor.webp";
+  badge.classList.add("badge");
+  cardsInfo.appendChild(badge);
+  let ajouterR = document.createElement("button");
+  ajouterR.classList.add("visibilite");
+  cardsInfo.appendChild(ajouterR);
+  remplacant.appendChild(cardsInfo);
+  let formule = event.target.parentElement;
+  namePlayer.textContent = formule.querySelector(".nameInpt").value;
+  logo.src = formule.querySelector(".equipe").value;
+  photoPlayer.src = formule.querySelector(".photo").value;
+  flagg.src = formule.querySelector(".nationalityI").value;
+  rate.textContent = formule.querySelector(".rating").value;
+  paceValeur.textContent = formule.querySelector(".paceI").value;
+  shootingValeur.textContent = formule.querySelector(".shootingI").value;
+  passingValeur.textContent = formule.querySelector(".passingI").value;
+  dribblingValeur.textContent = formule.querySelector(".dribblingI").value;
+  defendingValeur.textContent = formule.querySelector(".defendingI").value;
+  physicalValeur.textContent = formule.querySelector(".physicalI").value;
+  position.textContent = "gk";
+  cardInput.classList.add("hidden");
   cardInputGk.classList.add("hidden");
+}
+function opt(event) {
+  selectOption = event.options[event.selectedIndex].textContent;
+  return selectOption;
 }

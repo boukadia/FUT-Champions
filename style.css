@@ -13,6 +13,36 @@
 
   border-radius: 10px;
 }
+.cardInputR {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+
+  background-color: black;
+
+  border-radius: 10px;
+}
+.cardInputGkR {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+
+  background-color: black;
+
+  border-radius: 10px;
+}
 .cardInputGk {
   position: absolute;
   top: 0;
@@ -61,10 +91,6 @@
   top: 20%;
   left: 5%;
 }
-/* #nationality {
-  position: absolute;
-  top: 40px;
-} */
 .photoPlayer {
   width: 86% !important;
   position: absolute;
@@ -86,7 +112,7 @@
 .logo {
   position: absolute;
   top: 33%;
-  left: 80px;
+  left: 86%;
   width: 23% !important;
   height: 13%;
   border-radius: 50%;
@@ -171,6 +197,54 @@ p {
   display: flex;
   flex-direction: column;
 }
+.cardInputR {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+
+  background-color: black;
+
+  border-radius: 10px;
+  display: none;
+}
+.cardInputR div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.cardInputGkR div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.cardInputGkR {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 15px 5px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto;
+  gap: 10px;
+  width: 400px;
+  display: none;
+
+  background-color: black;
+
+  border-radius: 10px;
+}
+
+.cardInputRemplacant div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
 input {
   border-radius: 5px;
   background-color: rgb(251, 251, 251);
@@ -204,10 +278,7 @@ body {
   background-image: url(./image/stadium_background.webp);
 }
 .container {
-  /* background-image: url(./téléchargement.svg); */
-  /* background-color: rgba(24, 24, 24, 0.547); */
   width: 100vw;
-
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -216,6 +287,18 @@ body {
 .cardsRow2 img,
 .cardsRow3 img,
 .cardsRow4 img {
+  width: 8rem;
+  margin: -0.7rem;
+}
+.remplacant img {
+  width: 8rem;
+  margin: -0.7rem;
+}
+.visibilite {
+  visibility: hidden;
+}
+
+.badge {
   width: 115px;
   margin: -11px;
 }
@@ -251,4 +334,161 @@ body {
 .cardsInfo button,
 .cardsInfoGk button {
   margin: 0 auto;
+}
+
+.fa-regular {
+  position: fixed;
+  bottom: 5%;
+  font-size: 3rem;
+  right: 5%;
+}
+.remplacant {
+  border-radius: 1rem;
+  width: 16rem;
+  margin: 1%;
+  position: relative;
+  bottom: 38rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+  background-color: #d9d996f2;
+}
+.addGkRempl {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  z-index: 1;
+}
+.addPlayersR {
+  position: fixed;
+  top: 2rem;
+  left: 8rem;
+  z-index: 1;
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .cardsRow1 img,
+  .cardsRow2 img,
+  .cardsRow3 img,
+  .cardsRow4 img {
+    width: 6rem;
+    margin: -0.7rem;
+  }
+  .remplacant img {
+    width: 6rem;
+    margin: -0.7rem;
+  }
+  button {
+    width: 60px;
+    height: 20px;
+  }
+  .remplacant {
+    border-radius: 1rem;
+    width: 8rem;
+    margin: 1%;
+    position: relative;
+    bottom: 28rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    background-color: #d9d996f2;
+  }
+  .badge {
+    width: 90px;
+    margin: -11px;
+  }
+  select {
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  input {
+    border-radius: 2px;
+    background-color: rgb(251, 251, 251);
+    height: 20px;
+  }
+
+  div {
+    font-size: 6px;
+  }
+  p {
+    font-size: 0.5em;
+    color: white;
+  }
+
+  .flagg {
+    position: absolute;
+    left: 86%;
+    top: 20%;
+    width: 18px !important;
+    height: 18px;
+    border-radius: 50%;
+  }
+  #club {
+    position: absolute;
+  }
+  .logo {
+    position: absolute;
+    top: 33%;
+    left: 90%;
+    width: 23% !important;
+    height: 13%;
+    border-radius: 50%;
+  }
+  .paceValeur {
+    font-size: 5px;
+  }
+  .namePlayer {
+    font-size: 1em;
+  }
+
+  .cardInputR {
+    padding: 8px 3px;
+    top: 01%;
+    left: 20%;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    gap: 5px;
+    width: 200px;
+
+    border-radius: 5px;
+  }
+
+  .cardInput {
+    padding: 8px 3px;
+    top: 01%;
+    left: 20%;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    gap: 5px;
+    width: 200px;
+
+    border-radius: 5px;
+  }
+
+  .cardInputGkR {
+    padding: 8px 3px;
+    top: 01%;
+    left: 20%;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    gap: 5px;
+    width: 200px;
+
+    border-radius: 5px;
+  }
+  .cardInputGk {
+    padding: 8px 3px;
+    top: 01%;
+    left: 20%;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    gap: 5px;
+    width: 200px;
+
+    border-radius: 5px;
+  }
 }
