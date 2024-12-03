@@ -36,7 +36,7 @@ function formuleShow(event) {
 
   btn = event.target;
   if (formulaire.classList != "cardsInfoGk") {
-    if (btn.textContent === "modifier") {
+    if (btn.textContent == "modifier") {
       deleteButton.classList.remove("hidden");
       formule.querySelector(".nameInpt").value =
         formulaire.querySelector(".namePlayer").textContent;
@@ -65,12 +65,13 @@ function formuleShow(event) {
       formule.querySelector(".physicalI").value =
         formulaire.querySelector(".physicalValeur").textContent;
 
-      cardInput.classList.remove("hidden");
+      cardInput.style.display = "grid";
+
       cardInputGk.classList.add("hidden");
     } else {
       formInputs.forEach((input) => (input.value = ""));
       deleteButton.classList.add("hidden");
-      cardInput.classList.remove("hidden");
+      cardInput.style.display = "grid";
       cardInputGk.style.display = "none";
     }
   } else {
@@ -196,6 +197,8 @@ function inputAdd(event) {
   formulaire.querySelector(".physicalValeur").textContent =
     formule.querySelector(".physicalI").value;
   btn.textContent = "modifier";
+
+  cardInput.style.display = "none";
 }
 function del(event) {
   formulaire.querySelector(".photoPlayer").textContent = "";
@@ -216,7 +219,7 @@ function del(event) {
   formInputsGk.forEach((input) => (input.value = ""));
   btn.textContent = "ajouter";
 
-  cardInput.classList.add("hidden");
+  cardInput.style.display = "none";
   cardInputGk.style.display = "none";
 }
 // .................................................................
